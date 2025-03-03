@@ -1,0 +1,384 @@
+/* Base Styles */
+:root {
+    --text-color: #1a1c20;
+    --link-color: #ffffff;
+    --background-color: #eeeff1;
+    font-size: 17px; /* Set the base font size */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* Adjust this value based on the height of your nav bar */
+}
+
+@font-face {
+    font-family: "Steph";
+    src: url("fonts/steph-font.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Steph";
+    src: url("fonts/steph-font-bold.ttf");
+    font-weight: bold;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3.125rem;
+    height: 5rem;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #f5f5dc;
+    backdrop-filter: blur(5px);
+    opacity: 0.5;
+    
+}
+
+nav .left a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+nav .right a {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0.625rem;
+}
+
+nav .right a:hover {
+    color: var(--link-color);
+    transition: color 0.3s ease-in-out;
+}
+
+/* General Section Styles */
+section {
+    padding: 8rem 2rem;
+    min-height: 80vh; /* Reduce the default minimum height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+section:nth-of-type(odd) {
+    background-color: #f8f8f8; /* Light gray for odd sections */
+}
+
+section:nth-of-type(even) {
+    background-color: #ffffff; /* White for even sections */
+}
+
+/* Section Heading Styles */
+section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background-color: #bfd6c4;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* About Section */
+#about-section {
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    background: rgb(245, 245, 245);
+}
+
+#about-section h2 {
+    margin-bottom: 1rem;
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+#about-section .headshot {
+    width: 20rem;
+    height: 20rem;
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-bottom: 37px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#about-section .headshot img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+#about-section .headshot img:hover {
+    transform: scale(1.2);
+}
+
+
+/* Inspiration Section */
+#inspiration-section {
+    padding: 2rem 8rem 12rem;
+    min-height: 60vh; /* Reduce the default minimum height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#inspiration-section .aiVideo {
+    width: 854px;
+    height: 480px;
+    max-width: 100%;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.divider {
+    box-shadow: none; /* Reset box-shadow for this specific div */
+}
+
+#inspiration-section h2 {
+    margin-bottom: 1rem;
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.inspiration-subsection {
+    width: 100%;
+    margin-bottom: 4rem; /* Add space between subsections */
+}
+
+.inspiration-scroll-container {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 1600px;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    margin: 0 auto;
+}
+
+.inspiration-box {
+    flex: 0 0 16rem; /* Fixed width for the boxes */
+    text-align: center;
+    border: 1px solid #d7dbd8;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling */
+}
+
+.inspiration-box:hover {
+    transform: scale(0.95); /* Grow the box slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.inspiration-box img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.inspiration-box h4 {
+    margin-bottom: 1rem;
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.inspiration-box h5 {
+    margin-bottom: 1rem;
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+.inspiration-box p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #494a4a;
+}
+
+/* Reaction Section */
+#reaction-test-section {
+    padding: 2rem 8rem 12rem;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background: rgb(245, 245, 245); /* Matches existing light gray background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+#reaction-test-section h3 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+#reaction-test-section .reaction-test-box {
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#reaction-test-section .reaction-test-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+#reaction-test-section p {
+    font-size: 1.25rem;
+    color: #494a4a;
+    margin-bottom: 1rem;
+}
+
+#reaction-test-section .reaction-button {
+    background-color: #588061;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#reaction-test-section .reaction-button:hover {
+    background-color: #a5d6b0;
+}
+
+
+/* Contact Form Styling */
+.contact-form {
+    width: 100%;
+    max-width: 32rem; /* Equivalent to max-w-lg */
+    background-color: #ffffff;
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    
+}
+
+/* Form Field Containers */
+.form-group {
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Labels */
+.form-group label {
+    display: block; /* block */
+    color: #4a5568; /* text-gray-700 */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Input and Textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%; /* w-full */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border: 1px solid #d1d5db; /* Default border */
+    border-radius: 0.5rem; /* rounded-lg */
+    outline: none; /* focus:outline-none */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Input & Textarea Focus Effects */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #14b8a6; /* focus:ring-teal-300 */
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.5);
+}
+
+/* Button */
+.contact-form button {
+    width: 100%; /* w-full */
+    background-color: #3b82f6; /* bg-blue-500 */
+    color: white; /* text-white */
+    font-weight: 600; /* font-semibold */
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.contact-form button:hover {
+    background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+#contact-section h4 {
+    font-size: 2.75rem; /* Matches reaction-test-section h3 */
+    font-weight: 700;
+}
+
+
+footer {
+    background-color: #909090;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.875rem;
+}
+
+#gameContainer {
+    width: 854px;
+    height: 480px;
+    border: 1px solid #000; /* Optional border */
+  }
