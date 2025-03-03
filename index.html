@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Marshall Hawkes Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="Left">
+                <a href="#about-section">Marshall Hawkes</a>
+            </div>
+            <div class="flex space-x-20 text-sm">
+                <a href="#about-section" class="hover:text-blue-700">About</a>
+                <a href="#inspiration-section" class="hover:text-blue-700">Inspiration</a>
+                <a href="#reaction-test-section" class="hover:text-blue-700">Reaction Game</a>
+                <a href="#contact-section" class="hover:text-blue-700">Contact</a>
+            </div>
+
+            <a href="assets/Marshall Hawkes Resume.pdf" 
+                class="bg-blue-500 text-black px-4 py-2 rounded hover:bg-blue-700"
+                target="_blank"
+                download>
+                Resume
+            </a>
+        </nav>
+    </header>
+
+    <section id="about-section">
+        <h2>Hey World, I'm <span class="text-blue-500">Marshall!</span></h2>
+        <div class="headshot">
+            <picture>
+                <img src="assets/Display_photo.jpg" alt="Profile Picture">
+            </picture>
+        </div>
+        <div class="bio">
+            <p>Hey! I'm Marshall, a graduate software engineer specializing in building (and occasionally designing) exceptional digital experiences. 
+                Currently, I'm focused on growing my professional web development skills by building accessible and innovative, human-centered websites/experiences.
+            </p>
+            <br>
+            <p>Outside of career and academics, I enjoy playing Ice Hockey, live-streaming and going to the gym!</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="inspiration-section">
+        <h2>The Video That Inspired Me to Pursue Software Engineering</h2>
+        <div class="aiVideo">
+            <div class="flex justify-center">
+                <iframe width="854" height="480" src="https://www.youtube.com/embed/DcYLT37ImBY" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>  
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="reaction-test-section">
+        <h3>Can you beat my best score? (125ms) </h3>
+        <div id="gameContainer" class="container">
+            <iframe src="./game/index.html" width="854" height="480" frameborder="0"></iframe>
+        </div>  
+        <script src="game.js"></script>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact-section">
+        <h4>Get in contact with <span class="text-blue-500">Marshall!</span></h4>
+        <p>If you'd like to get in touch with me or gloat about beating my time, feel free to fill in the form below, and I'll get back to you as soon as possible.</p>
+
+        <form action="https://formspree.io/f/xjkgnpwz" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+        
+            <button type="submit">Send Message</button>
+        </form>
+
+
+    </section>
+</body>
+</html>
